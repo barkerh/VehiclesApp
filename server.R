@@ -8,10 +8,12 @@ library(GGally)
 library(modelr)
 library(rgl)
 library(ggplot2)
+library(httr)
 
-vehicles <- read.csv(text=GET(https://raw.githubusercontent.com/barkerh/VehiclesApp/master/2018%20Vehicles%20Dataset%20revised.csv), header=T)
+vehicles <-read.csv(text=GET("https://raw.githubusercontent.com/barkerh/VehiclesApp/master/2018VehiclesDatasetrevised.csv"), header=T)
+
 df <- data.frame(vehicles[5:8], vehicles[10], vehicles[12], vehicles[14:18])
-# Define server logic required to draw a histogram
+# Define server logic required to draw a scatterplot
 shinyServer(function(input, output, session) {
    
   #create link for the original data set
