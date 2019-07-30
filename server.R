@@ -9,9 +9,9 @@ library(modelr)
 library(rgl)
 library(ggplot2)
 library(httr)
+library(readr)
 
-urlfile <- getURL("https://raw.githubusercontent.com/barkerh/VehiclesApp/master/2018VehiclesDatasetrevised.csv")
-vehicles <- read.csv(urlfile)
+vehicles <- read_csv("https://raw.githubusercontent.com/barkerh/VehiclesApp/master/2018VehiclesDatasetrevised.csv", header = T)
 
 df <- data.frame(vehicles[5:8], vehicles[10], vehicles[12], vehicles[14:18])
 # Define server logic required to draw a scatterplot
