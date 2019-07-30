@@ -9,7 +9,7 @@ library(modelr)
 library(rgl)
 library(ggplot2)
 
-vehicles <- read.csv(text=GET("https://github.com/barkerh/VehiclesApp/blob/master/vehicles"), skip=7, header=T)
+vehicles <- read.csv(text=GET("https://github.com/barkerh/VehiclesApp/blob/master/vehicles"), header=T)
 df <- data.frame(vehicles[5:8], vehicles[10], vehicles[12], vehicles[14:18])
 # Define server logic required to draw a histogram
 shinyServer(function(input, output, session) {
