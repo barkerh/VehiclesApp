@@ -9,12 +9,12 @@ library(modelr)
 library(rgl)
 library(ggplot2)
 
-vehicles <- read.csv("2018VehiclesDatasetrevised.csv", header = TRUE)
-
-df <- data.frame(vehicles[5:8], vehicles[10], vehicles[12], vehicles[14:18])
 # Define server logic required to draw a scatterplot
 shinyServer(function(input, output, session) {
    
+vehicles <- read.csv("2018VehiclesDatasetrevised.csv", header = TRUE)
+
+df <- data.frame(vehicles[5:8], vehicles[10], vehicles[12], vehicles[14:18])
   #create link for the original data set
   output$html_link <- renderUI({
     a("To view the original data set for 2018 or see other data sets click here", href = "https://www.fueleconomy.gov/feg/download.shtml", target = "_blank")
