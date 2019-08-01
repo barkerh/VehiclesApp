@@ -3,6 +3,8 @@ library(shiny)
 library(plotly)
 library(shinyWidgets)
 
+vehicles <- read.csv("2018VehiclesDatasetrevised.csv", header = TRUE)
+
 shinyUI(fluidPage(
   
   tabsetPanel(
